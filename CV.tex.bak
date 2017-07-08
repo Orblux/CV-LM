@@ -1,119 +1,185 @@
-\documentclass[11pt,a4paper,sans]{moderncv}
-\moderncvstyle{classic}
-\moderncvcolor{blue}
-\setlength{\hintscolumnwidth}{2cm}
-\usepackage[latin1]{inputenc}% encodage, à modifier selon vos habitudes
-\usepackage[T1]{fontenc}
-\usepackage[top=1.1cm, bottom=1.1cm, left=1.5cm, right=1.5cm]{geometry}
-%\usepackage[scale=0.85]{geometry}% pour régler les marges du CV les options habituelles de l'extension geometry peuvent s'appliquer ici
-\usepackage{helvet}% pour utiliser la police helvetica par exemple.
-\usepackage[french]{babel}% pour un document en français.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%!TEX TS-program = xelatex
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\name{Kévin}{ALAZET}% no comment
-\title{Ingénieur chimiste, spécialisé en ingénierie analytique/chimiométrie}% ceci est optionnel et permet d'ajouter des informations en dessous du titre du CV. À commenter si on veut l'enlever.
-\address{6, rue Casteret}{64\,000 Pau}{France}% optionnel aussi, supprimer ou laisser vide l'argument pays par exemple.
-%les données suivantes sont aussi optionnelles donc à commenter si on n'en veut pas
-\phone[mobile]{+33(0)6.30.74.27.36}
-%\phone[fixed]{01~01~88~33~55}
-%\phone[fax]{02~11~22~33~44}
-\email{kevin.alazet@gmail.com}
-%\homepage{www.pierredurand.com}
-\social[linkedin]{kevin.alazet}
-%\social[twitter]{pierre.durand}
-%\social[github]{pierre.durand}
-\extrainfo{Permis B}
-\quote{Disponible à partir d'octobre 2017}%toujours optionnel, se place avant le corps du CV
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[a4paper]{cv-pattern} % a4paper for A4
+
+\usepackage{afterpage}
+\usepackage{hyperref}
+\usepackage{color}
+\usepackage{xcolor}
+\hypersetup{
+    pdftitle={},
+    pdfauthor={},
+    pdfsubject={},
+    pdfkeywords={},
+    colorlinks=false,       % no lik border color
+   allbordercolors=white    % white border color for all
+}
+
+%----------------------------------------------------------------------------------------
+%	 PERSONAL INFORMATION
+%----------------------------------------------------------------------------------------
+
+% If you don't need one or more of the below, just remove the content leaving the command, e.g. \cvnumberphone{}
+
+\cvname{HARSH GADGIL} % Your name
+\cvjobtitle{ Data Scientist } % Job
+% title/career
+
+\cvlinkedin{/in/hsgadgil}
+\cvgithub{opensorceror}
+\cvnumberphone{(647) 221 7999} % Phone number
+\cvsite{hgadgil.com} % Personal website
+\cvmail{harsh.gadgil@gmail.com} % Email address
+
+%----------------------------------------------------------------------------------------
 
 \begin{document}
-\makecvtitle
 
-\section{Formations}
-\cventry{2014--2017}{Diplôme d'ingénieur chimique (CTI)}{\'Ecole Nationale Supérieur des Ingénieurs en Arts Chimiques Et Technologiques (ENSIACET)}			{Toulouse}{}
-	{Département Chimie et spécialité en Ingénierie Analytique}
-\cventry{2011--2014}{Classe préparatoire PCSI, PC, PC*}{Lycée Charlemagne}		{Paris}{}{Physique-Chimie et Sciences de l'Ingénieur}
-\cventry{Juin 2011}{Baccalauréat Série Scientifique}{Lycée Jeanne d'Albret}			{Saint Germain-en-Laye}{\textit{Mention Très Bien}}
-	{Option Physique-Chimie}% on peut mettre ici de 3 à 6 arguments qui peuvent être laissés vides        
-            
-\section{Expériences}
-\subsection{Professionnelles}
-\cventry{2017 \\ \textit{6 mois}}{Stage ingénieur de fin d'étude}{Total SA}{Pau - CSTJF}
-	{Développement d'un modèle numérique standardisé pour l'interprétation des données géochimiques}
-{
-\begin{itemize}
-	\item Mise en place d'un modèle numérique pour l'interprétation automatique et standardisé des données géochimiques
-	\item \'Elaboration d'un "Flowsheet" et sélection d'un paramètres par défaut en collaboration avec les Géochimistes
-	\item Création d'une interface en VBA (EXCEL-macro) comme premier pas pour la création d'un logiciel professionnel
-	\item Création de la documentation associée (notamment diagrammes UML)
-	\item Collecte des données GC-MS et GC-FID
-\end{itemize}
+\header{Carmine}{Benedetto}
+      {Computer Engineer}
+
+% Fake text to add separator      
+\fcolorbox{white}{gray}{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
+.....
+}}
+
+%----------------------------------------------------------------------------------------
+%	 SIDEBAR
+%----------------------------------------------------------------------------------------
+
+% Command for printing skill overview bubbles
+\newcommand\skills{ 
+~
+	\smartdiagram[bubble diagram]{
+        \textbf{Full Stack}\\\textbf{Dev},
+        \textbf{Relational/}\\\textbf{Document}\\\textbf{Databases},
+        \textbf{~~~~~OOP~~~~~~},
+        \textbf{Mobile}\\\textbf{Dev},
+        \textbf{Machine}\\\textbf{Learning},
+        \textbf{Test}\\\textbf{~~Automation~~},
+        \textbf{Statistical}\\\textbf{Analysis}
+    }
 }
 
-\cventry{2016 \\ \textit{5 mois}}{Stage ingénieur junior}{Dublin City University (DCU)}{Dublin, Irlande}
-	{Développement d'outils microfluidiques par CAO pour la chimie analytique}
-{
-\begin{itemize}
-	\item Design des outils microfluidiques Lab-On-A-Discs (LOAD) pour des applications environnementales ou biochimiques
-	\item Fabrication et test des LOAD : collecte et tris des micro-plastiques dans les eaux vives, analyses des antigènes présent dans le sang, détection de polluants...
-	\item Définition de paramètres pour un revêtement biocide
-\end{itemize}
+% Programming skill bars
+\programming{{C $\textbullet$ C++  $\textbullet$ R / 3}, {Java $\textbullet$ SQL $\textbullet$ \large \LaTeX / 3.5}, {HTML5 $\textbullet$ JS $\textbullet$ Python / 5}}
+
+% Projects text
+\projects{
+\textbf{DecAR} - An augmented reality interior decoration app for Android \\
+        \textbf{CIS*6320} - An implementation of the Bicubic interpolation algorithm in C++
+        \textbf{CIS*6650} - A comparative statistical study of SVM kernels, and number of hidden layers in ANN, on 5 UCI datasets
+        \textbf{CIS*6660} - A data linkage project to integrate Canada's WWI casualties and 1901 Canadian census using an SVM
+        \textbf{CIS*6650} - A statistical study of spurious correlations, such as correlating beer production with election outcome
 }
 
-\cventry{2015 \\ \textit{1 mois}}{Stage technicien}{CNRS - LCC (Laboratoire de Chimie de Coordination)}{Toulouse}
-	{Synthèse de ligands ferrocéniques sous une forme énantiomèriquement pure}
-{
-\begin{itemize}
-	\item Purification des produits par chromatographie sur colonne de gel de silice
-	\item Analyse des produits par RMN ($^{1}$H et $^{31}$P)
-\end{itemize}
-}
+\makeprofile % Print the sidebar
 
-\subsection{Divers}
-\cventry{2017 \\ \textit{3 mois}}{Projet de fin d'étude \textit{(4 élèves)}}{ENSIACET}{Toulouse}
-	{Mise en place d'un modèle numérique pour l'interprétation de données NIR (proche infrarouge)}
-{
-\begin{itemize}
-	\item Projet en partenariat avec un industriel (SARL Développement Durable)
-	\item Création et exécution d'un plan d'expérience
-	\item Utilisation d'un capteur portable NIR nouvelle génération (SCIO by Consumer Physics)
-	\item Analyse de la qualité de l'huile de friture
-	\item Création d'une base de données et utilisation de traitements statistiques (ACP, PLS, CROSS-Validation)
-\end{itemize}
-}
+%----------------------------------------------------------------------------------------
+%	 EDUCATION
+%----------------------------------------------------------------------------------------
 
-\cventry{2015 \\ \textit{1 mois}}{chargé de mission Développeur Front-End WEB}{FA7 - ENSIACET Junior entreprise}{Toulouse}
-	{Création et déploiement d'un site internet pour un établissement de restauration -- chambres d'hôtes}
-{
-\begin{itemize}
-	\item Développement du site en HTML-CSS et PHP-MySQL
-	\item Choix de l'hébergeur et déploiement
-\end{itemize}
-}
+\section{Education}
+\begin{entrylist}
+  \entry
+    {2009 - 2012}
+    {Master's Degree in Computer Engineering}
+    {UniversitÃ  di Pisa, Italy}
+    {Curriculum Networking and Multimedia.\\
+    Main subjects: Network Applications, Systems Architecture and Security, Mobile Applications, Multemedia Information            Processing.\\
+    \emph{Title of the Thesis: "A Handoff Algorithm based on Link Quality Prediction for Mass Transit Wireless Mesh Networks"      .}\\
+    \emph{Relators: Prof. Enzo Mingozzi, Ing. Carlo Vallati, Prof. Luciano Lenzini.}\\}
+  \entry
+    {2005 - 2009}
+    {Bachelor's Degree in Computer Engineering}
+    {UniversitÃ  di Pisa, Italy}
+    {Main subjects: Matematics and Physics, Programming, Operational Research, Telecommunication Systems, Digital and Analogical Electronics.\\
+    \emph{Title of the Thesis: "Development, Management and Migrations of web contents and applications".}\\
+    \emph{Thesis activity carried out during an internship period at Atitlan Engineering SRL.}\\}
+  \entry
+    {2000 - 2005}
+    {Scientific Disploma.}
+    {Liceo Scientifico, Matera, Italy}
+    {Scientific Secondary School.\\
+    Main subjects: Matematics, Physics, Computer Science.}
+\end{entrylist}
 
-\cventry{2015--2016 \\ \textit{1 mois}}{Projet étudiant \textit{(7 élèves)}}{ENSIACET}{Toulouse}
-	{Création d'une micro-brasserie}
-{
-\begin{itemize}
-	\item Direction du groupe (novembre 2015 - avril 2016)
-	\item \'Etude, mise en place et amélioration du procédé
-	\item Analyse des produits par GC-MS et GC-FID
-	\item Analyse organoleptique de la bière produite
-	\item Achat de la matière première et des équipements
-\end{itemize}
-}
+%----------------------------------------------------------------------------------------
+%	 EXPERIENCE
+%----------------------------------------------------------------------------------------
 
-\section{Langues}
-%Possibilité d'insérer des commentaires dans les entrées
-\cvitemwithcomment{Anglais}{lu, parlé, écrit}{TOEIC : 970}
-\cvitemwithcomment{Notions}{espagnol, latin et grec ancien}{}
+\section{Experience}
+\begin{entrylist}
+  \entry
+    {02/13 - Now}
+    {Software Engineer}
+    {Fluidmesh Networks SRL, Milano, Italy}
+    {Design and development of algorithms, solutions and high speed mobility           schemes for Wireless Mesh Networks. Design and development of embedded software     for Wireless Network devices.\\}
+  \entry
+    {01/12 - 01/13}
+    {Freelance Developer \& Consultant}
+    {Icosaedro Solutions}
+    {Design and development of Android Applications, Web Solutions, Unix and GNU/Linux software.\\}
+    \entry
+    {12/09 - 06/09}
+    {Project Manager and Webmaster}
+    {D.I.D.A.G., Grassano (MT), Italy}
+    {Design, development and management of an e-commerce website on Joomla!1.5 CMS platform.\\}
+    \entry
+    {06/09 - 09/09}
+    {Part-time collaboration}
+    {Area Sistemi Informatici, UniversitÃ  di Pisa, Italy}
+    {Computer technical support. Problem solving related to hardware, software and Operating Systems. Management of the internal network.\\}
+    \entry
+    {06/09 - 09/09}
+    {Internship}
+    {Atitlan Engineering SRL, Pisa, Italy}
+    {Management and migration of servers. Development of web templates and interfaces. Management of SQL databases.}
+\end{entrylist}
 
-\section{Compétences informatiques}
-%possibilité de mettre les entrées en deux colonnes 
-\cvitem{Langages}{C, C++ (notions), UML (notions), VBA, Batch, HTML+CSS (Framework Bootstrap), PHP (notions), langages réseaux (TCP et sockets)}
-\cvitem{Logiciels}{Statistiques R/RStudio, Modélisation moléculaire Spartan, Contrôle de version Git/GitHub, CAO SolidWorks et Autocad}
-\cvitem{Techniques analytiques}{FTIR/ATR, UV-vis, RMN (1D, 2D, 1H et 13C), GC-MS, HPLC-UV \newline
-Notion de GCxGC, GC-GC, MSMS, DrX, MEB-EDS et d?analyseurs en ligne}
 
-\section{Centres d'intérêts}
-\cvdoubleitem{Association}{Animation d'ateliers scientifiques AFEV}{Passions}{Musique rock \& littérature classique}
-\cvdoubleitem{Musique}{Piano classique (8ans) \& jazz (3ans)}{Sports}{Natation (compétition) \& Rock (danse)}
+
+\section{Certifications}
+\begin{entrylist}
+  \entry
+    {02/2013}
+    {Intro to Computer Science}
+    {Udacity. E-learning}
+    {\emph{Building a Python Search Engine}}
+\end{entrylist}
+
+\newpage
+
+\begin{aside}
+~
+~
+~
+  \section{Places Lived}
+    \includegraphics[scale=0.25]{img/italia.png}
+    ~
+  \section{Languages}
+    \textbf{Italian}\includegraphics[scale=0.40]{img/5stars.png}
+    \textbf{English}\includegraphics[scale=0.40]{img/4stars.png}
+\end{aside}
+
+\section{Other Info}
+For the Italian job market:\\
+\emph{Si autorizza il trattamento delle informazioni contenute nel curriculum in conformitÃ  alle disposizioni previste dal d.lgs. 196/2003. Si dichiara altresÃ¬ di essere consapevole che, in caso di dichiarazioni non veritiere, si Ã¨ passibili di sanzioni penali ai sensi del DPR 445/00 oltre alla revoca dei benefici eventualmente percepiti.}
+\\
+\begin{flushleft}
+\emph{January 14th, 2014}
+\end{flushleft}
+\begin{flushright}
+\emph{Carmine Benedetto}
+\end{flushright}
+
+
 \end{document}

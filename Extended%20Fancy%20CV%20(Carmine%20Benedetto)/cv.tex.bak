@@ -10,6 +10,20 @@
 
 \documentclass[a4paper]{cv-pattern} % a4paper for A4
 
+% Command for printing skill overview bubbles
+\newcommand\skills{ 
+~
+	\smartdiagram[bubble diagram]{
+        \textbf{Full Stack}\\\textbf{Dev},
+        \textbf{Relational/}\\\textbf{Document}\\\textbf{Databases},
+        \textbf{~~~~~OOP~~~~~~},
+        \textbf{Mobile}\\\textbf{Dev},
+        \textbf{Machine}\\\textbf{Learning},
+        \textbf{Test}\\\textbf{~~Automation~~},
+        \textbf{Statistical}\\\textbf{Analysis}
+    }
+}
+
 \usepackage{afterpage}
 \usepackage{hyperref}
 \usepackage{color}
@@ -21,6 +35,18 @@
     pdfkeywords={},
     colorlinks=false,       % no lik border color
    allbordercolors=white    % white border color for all
+}
+
+% Programming skill bars
+\programming{{C $\textbullet$ C++  $\textbullet$ R / 3}, {Java $\textbullet$ SQL $\textbullet$ \large \LaTeX / 3.5}, {HTML5 $\textbullet$ JS $\textbullet$ Python / 5}}
+
+% Projects text
+\projects{
+\textbf{DecAR} - An augmented reality interior decoration app for Android \\
+        \textbf{CIS*6320} - An implementation of the Bicubic interpolation algorithm in C++
+        \textbf{CIS*6650} - A comparative statistical study of SVM kernels, and number of hidden layers in ANN, on 5 UCI datasets
+        \textbf{CIS*6660} - A data linkage project to integrate Canada's WWI casualties and 1901 Canadian census using an SVM
+        \textbf{CIS*6650} - A statistical study of spurious correlations, such as correlating beer production with election outcome
 }
 
 %----------------------------------------------------------------------------------------
@@ -42,79 +68,73 @@
 %----------------------------------------------------------------------------------------
 
 \begin{document}
-
 \header{Carmine}{Benedetto}
       {Computer Engineer}
-
+      
 % Fake text to add separator      
 \fcolorbox{white}{gray}{\parbox{\dimexpr\textwidth-2\fboxsep-2\fboxrule}{%
 .....
 }}
 
+\makeprofile % Print the sidebar
+
 %----------------------------------------------------------------------------------------
 %	 SIDEBAR
 %----------------------------------------------------------------------------------------
 
-% Command for printing skill overview bubbles
-\newcommand\skills{ 
-~
-	\smartdiagram[bubble diagram]{
-        \textbf{Full Stack}\\\textbf{Dev},
-        \textbf{Relational/}\\\textbf{Document}\\\textbf{Databases},
-        \textbf{~~~~~OOP~~~~~~},
-        \textbf{Mobile}\\\textbf{Dev},
-        \textbf{Machine}\\\textbf{Learning},
-        \textbf{Test}\\\textbf{~~Automation~~},
-        \textbf{Statistical}\\\textbf{Analysis}
-    }
-}
 
-% Programming skill bars
-\programming{{C $\textbullet$ C++  $\textbullet$ R / 3}, {Java $\textbullet$ SQL $\textbullet$ \large \LaTeX / 3.5}, {HTML5 $\textbullet$ JS $\textbullet$ Python / 5}}
-
-% Projects text
-\projects{
-\textbf{DecAR} - An augmented reality interior decoration app for Android \\
-        \textbf{CIS*6320} - An implementation of the Bicubic interpolation algorithm in C++
-        \textbf{CIS*6650} - A comparative statistical study of SVM kernels, and number of hidden layers in ANN, on 5 UCI datasets
-        \textbf{CIS*6660} - A data linkage project to integrate Canada's WWI casualties and 1901 Canadian census using an SVM
-        \textbf{CIS*6650} - A statistical study of spurious correlations, such as correlating beer production with election outcome
-}
-
-\makeprofile % Print the sidebar
 
 %----------------------------------------------------------------------------------------
 %	 EDUCATION
 %----------------------------------------------------------------------------------------
 
-\section{Education}
-\begin{entrylist}
-  \entry
-    {2009 - 2012}
-    {Master's Degree in Computer Engineering}
-    {Universit√  di Pisa, Italy}
-    {Curriculum Networking and Multimedia.\\
-    Main subjects: Network Applications, Systems Architecture and Security, Mobile Applications, Multemedia Information            Processing.\\
-    \emph{Title of the Thesis: "A Handoff Algorithm based on Link Quality Prediction for Mass Transit Wireless Mesh Networks"      .}\\
-    \emph{Relators: Prof. Enzo Mingozzi, Ing. Carlo Vallati, Prof. Luciano Lenzini.}\\}
-  \entry
-    {2005 - 2009}
-    {Bachelor's Degree in Computer Engineering}
-    {Universit√  di Pisa, Italy}
-    {Main subjects: Matematics and Physics, Programming, Operational Research, Telecommunication Systems, Digital and Analogical Electronics.\\
-    \emph{Title of the Thesis: "Development, Management and Migrations of web contents and applications".}\\
-    \emph{Thesis activity carried out during an internship period at Atitlan Engineering SRL.}\\}
-  \entry
-    {2000 - 2005}
-    {Scientific Disploma.}
-    {Liceo Scientifico, Matera, Italy}
-    {Scientific Secondary School.\\
-    Main subjects: Matematics, Physics, Computer Science.}
-\end{entrylist}
+
+
+
+
+
+
+
+
 
 %----------------------------------------------------------------------------------------
 %	 EXPERIENCE
 %----------------------------------------------------------------------------------------
+
+
+
+% In the aside, each new line forces a line break
+\begin{aside}
+  \section{Address}
+    Viale Fulvio Testi, 62
+    20126, Milano, Italy
+    ~
+  \section{Tel \& Skype}
+    +39 329 7216527
+    neoben86
+    ~
+  \section{Mail}
+    \href{mailto:carmine.benedetto@gmail.com}{\textbf{carmine.benedetto@}\\gmail.com}
+    \href{mailto:carmine@carminebenedetto.net}{\textbf{carmine@}\\carminebenedetto.net}
+    ~
+  \section{Web \& Git}
+    \href{http://www.carminebenedetto.net}{carminebenedetto.net}
+    \href{https://bitbucket.org/neoben}{bitbucket.org/neoben}
+    \href{https://github.com/neoben}{github.com/neoben}
+    ~
+  \section{Programming}
+    \includegraphics[scale=0.62]{img/programming.png}
+    ~
+  \section{OS Preference}
+    \textbf{GNU/Linux}\includegraphics[scale=0.40]{img/5stars.png}
+    \textbf{Unix}\includegraphics[scale=0.40]{img/4stars.png}
+    \textbf{MacOS}\includegraphics[scale=0.40]{img/2stars.png}
+    \textbf{Windows}\includegraphics[scale=0.40]{img/1stars.png}
+    ~
+  \section{Personal Skills}
+    \includegraphics[scale=0.62]{img/personal.png}
+    ~
+\end{aside}
 
 \section{Experience}
 \begin{entrylist}
@@ -145,7 +165,30 @@
     {Management and migration of servers. Development of web templates and interfaces. Management of SQL databases.}
 \end{entrylist}
 
-
+\section{Education}
+\begin{entrylist}
+  \entry
+    {2009 - 2012}
+    {Master's Degree in Computer Engineering}
+    {Universit√  di Pisa, Italy}
+    {Curriculum Networking and Multimedia.\\
+    Main subjects: Network Applications, Systems Architecture and Security, Mobile Applications, Multemedia Information            Processing.\\
+    \emph{Title of the Thesis: "A Handoff Algorithm based on Link Quality Prediction for Mass Transit Wireless Mesh Networks"      .}\\
+    \emph{Relators: Prof. Enzo Mingozzi, Ing. Carlo Vallati, Prof. Luciano Lenzini.}\\}
+  \entry
+    {2005 - 2009}
+    {Bachelor's Degree in Computer Engineering}
+    {Universit√  di Pisa, Italy}
+    {Main subjects: Matematics and Physics, Programming, Operational Research, Telecommunication Systems, Digital and Analogical Electronics.\\
+    \emph{Title of the Thesis: "Development, Management and Migrations of web contents and applications".}\\
+    \emph{Thesis activity carried out during an internship period at Atitlan Engineering SRL.}\\}
+  \entry
+    {2000 - 2005}
+    {Scientific Disploma.}
+    {Liceo Scientifico, Matera, Italy}
+    {Scientific Secondary School.\\
+    Main subjects: Matematics, Physics, Computer Science.}
+\end{entrylist}
 
 \section{Certifications}
 \begin{entrylist}
@@ -170,6 +213,11 @@
     \textbf{English}\includegraphics[scale=0.40]{img/4stars.png}
 \end{aside}
 
+\section{Publications}
+C. Benedetto, E. Mingozzi, C. Vallati\\
+\textbf{A Handoff Algorithm based on Link Quality Prediction for Mass Transit Wireless Mesh Networks}\\
+\emph{Proceedings of the 18th IEEE Symposium on Computers and Communications (ISCC 2013), Split, Croatia, July 7-10, 2013}
+\\
 \section{Other Info}
 For the Italian job market:\\
 \emph{Si autorizza il trattamento delle informazioni contenute nel curriculum in conformit√  alle disposizioni previste dal d.lgs. 196/2003. Si dichiara altres√¨ di essere consapevole che, in caso di dichiarazioni non veritiere, si √® passibili di sanzioni penali ai sensi del DPR 445/00 oltre alla revoca dei benefici eventualmente percepiti.}
